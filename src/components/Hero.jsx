@@ -11,7 +11,7 @@ export default function Hero() {
         gutterBottom 
         sx={{ fontWeight: "bold", color: "#6a0dad", textShadow: "0 0 10px rgba(106, 13, 173, 0.7)" }}
       >
-        Welcome to My Portfolio
+        Portfolio
       </Typography>
 
       {/* Brief Intro */}
