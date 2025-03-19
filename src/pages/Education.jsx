@@ -10,19 +10,21 @@ const educationSections = [
         degree: "Web Development Bootcamp",
         institution: "Fullstack Academy / Louisiana State University",
         dates: "October 2023",
-        details: "Completed an intensive program covering front-end and back-end technologies, including JavaScript, React, Node.js, and SQL."
+        details: "Completed an intensive program covering front-end and back-end technologies, including JavaScript, React, Node.js, and SQL.",
+        image: "/bootcamp.png", 
       },
       {
         degree: "Bachelor of General Studies",
         institution: "Louisiana State University Shreveport",
         dates: "May 2024",
-        details: "Gained a broad education with a focus on critical thinking, research, and technology-related coursework."
-      }
-    ]
-  }
+        details: "Gained a broad education with a focus on critical thinking, research, and technology-related coursework.",
+        image: "/GSDegree.png", 
+      },
+    ],
+  },
 ];
 
-function Education() {
+export default function Education() {
   return (
     <Container maxWidth="lg" sx={{ mt: 5 }}>
       <Typography variant="h3" sx={{ textAlign: "center", fontWeight: "bold", mb: 4 }}>
@@ -40,21 +42,37 @@ function Education() {
                   </Typography>
                 </Box>
                 {section.education.map((edu, i) => (
-                  <Box key={i} sx={{ mb: 3 }}>
-                    <Typography variant="h6" sx={{ fontWeight: "bold", color: "#6a0dad" }}>
-                      {edu.degree}
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                      {edu.institution}
-                    </Typography>
-                    <Typography variant="body2" sx={{ fontStyle: "italic", color: "#555" }}>
-                      {edu.dates}
-                    </Typography>
-                    {edu.details && (
-                      <Typography variant="body2" sx={{ mt: 1 }}>
-                        <strong>Details:</strong> {edu.details}
-                      </Typography>
+                  <Box key={i} sx={{ mb: 3, display: "flex", alignItems: "center", gap: 3 }}>
+                    
+                    {edu.image && (
+                      <Box
+                        component="img"
+                        src={edu.image}
+                        alt={edu.degree}
+                        sx={{
+                          width: 200, 
+                          height: "auto",
+                          borderRadius: 1,
+                          boxShadow: "0 0 10px rgba(0,0,0,0.2)", 
+                        }}
+                      />
                     )}
+                    <Box>
+                      <Typography variant="h6" sx={{ fontWeight: "bold", color: "#6a0dad" }}>
+                        {edu.degree}
+                      </Typography>
+                      <Typography variant="body1" color="text.secondary">
+                        {edu.institution}
+                      </Typography>
+                      <Typography variant="body2" sx={{ fontStyle: "italic", color: "#555" }}>
+                        {edu.dates}
+                      </Typography>
+                      {edu.details && (
+                        <Typography variant="body2" sx={{ mt: 1 }}>
+                          <strong>Details:</strong> {edu.details}
+                        </Typography>
+                      )}
+                    </Box>
                   </Box>
                 ))}
               </CardContent>
@@ -65,5 +83,3 @@ function Education() {
     </Container>
   );
 }
-
-export default Education;

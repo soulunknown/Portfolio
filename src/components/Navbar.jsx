@@ -29,7 +29,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   
-  // 🔥 NEW: Activates Hamburger Menu at 1200px instead of 960px
+
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleDrawerToggle = () => {
@@ -79,7 +79,7 @@ export default function Navbar() {
             }}
           />
 
-          {/* 🔥 Centered Navbar Items */}
+         
           {!isMobile && (
             <Box
               sx={{
@@ -126,7 +126,7 @@ export default function Navbar() {
             </Box>
           )}
 
-          {/* 🔥 NEW: Hamburger menu appears sooner (1200px instead of 960px) */}
+          
           {isMobile && (
             <IconButton edge="end" color="inherit" onClick={handleDrawerToggle}>
               <MenuIcon />
@@ -142,7 +142,7 @@ export default function Navbar() {
         onClose={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
         sx={{
-          display: { xs: "block", lg: "none" }, // 🔥 NEW: Shows only when below 1200px
+          display: { xs: "block", lg: "none" }, 
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: "75vw",
