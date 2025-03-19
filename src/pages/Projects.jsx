@@ -3,6 +3,12 @@ import ProjectCard from "../components/ProjectCard.jsx";
 
 const projects = [
   {
+    title: "Car Wizard",
+    description: "A comprehensive car review application that allows users to browse, review, and compare different cars. Features include detailed specifications, user ratings, and image uploads.",
+    image: "/carwizard.jpg",
+    link: "https://carreviewweb.onrender.com/", // Your actual Car Wizard link
+  },
+  {
     title: "DoorDash Tracker",
     description: "A tracking app that helps DoorDash drivers monitor their hours, earnings, and mileage. It provides insights into peak hours, total earnings over time, and estimated tax deductions.",
     image: "/doordashtracker.jpg",
@@ -14,12 +20,7 @@ const projects = [
     image: "/cookieman-cartoon.svg",
     link: "https://github.com/soulunknown/cookie-man", // Replace with actual link
   },
-  {
-    title: "Car Wizard",
-    description: "A comprehensive car review application that allows users to browse, review, and compare different cars. Features include detailed specifications, user ratings, and image uploads.",
-    image: "/carwizard.jpg",
-    link: "https://carreviewweb.onrender.com/", // Your actual Car Wizard link
-  },
+
 ];
 
 export default function Projects() {
