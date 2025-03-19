@@ -3,6 +3,9 @@ import {
   Container, TextField, Button, Typography, Box, Alert, useTheme 
 } from "@mui/material";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+
+ 
 
 export default function Contact() {
   const theme = useTheme();
@@ -21,18 +24,40 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        "service_rkbf498", // Your EmailJS Service ID
-        "template_dw7qjwc", // Your EmailJS Template ID
+        "service_rkbf498", 
+        "template_dw7qjwc", 
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        "fN6dgQmUIyLWs9OkZ" // Replace with your EmailJS Public Key
+        "fN6dgQmUIyLWs9OkZ" 
       );
 
-      setSuccessMessage("Your message has been sent! 🎉");
+      setSuccessMessage(
+        <Box
+          component={motion.div}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1, boxShadow: "0px 0px 20px #9c27b0" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#9c27b0", // Deep Purple
+            color: "white",
+            fontSize: "1.2rem",
+            padding: "12px 20px",
+            borderRadius: "12px",
+            boxShadow: "0px 0px 10px #9c27b0", // Initial glow
+            textAlign: "center",
+            fontWeight: "bold",
+          }}
+        >
+          Message Delivered 
+        </Box>
+      );
       setErrorMessage("");
       setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
     } catch (error) {
@@ -48,7 +73,7 @@ export default function Contact() {
         gutterBottom 
         sx={{ textShadow: "0 0 10px #6a0dad", color: isDarkMode ? "#fff" : "#000" }}
       >
-        Contact Me 📩
+        Contact Me 
       </Typography>
 
       {successMessage && <Alert severity="success">{successMessage}</Alert>}

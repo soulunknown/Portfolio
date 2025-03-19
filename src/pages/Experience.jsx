@@ -43,7 +43,7 @@ function Experience() {
   return (
     <Container maxWidth="lg" sx={{ mt: 5 }}>
       <Typography variant="h3" sx={{ textAlign: "center", fontWeight: "bold", mb: 4 }}>
-        My Experience
+        Experience
       </Typography>
       <Grid container spacing={4}>
         {experienceSections.map((section, index) => (

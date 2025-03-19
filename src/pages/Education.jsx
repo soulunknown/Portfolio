@@ -26,7 +26,7 @@ function Education() {
   return (
     <Container maxWidth="lg" sx={{ mt: 5 }}>
       <Typography variant="h3" sx={{ textAlign: "center", fontWeight: "bold", mb: 4 }}>
-        My Education
+        Education
       </Typography>
       <Grid container spacing={4}>
         {educationSections.map((section, index) => (
