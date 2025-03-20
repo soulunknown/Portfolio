@@ -21,18 +21,34 @@ export default function CustomThemeProvider({ children }) {
           mode,
           ...(mode === "dark"
             ? {
-                background: { default: "#121212", paper: "#1E1E1E" }, // ✅ Dark background
-                text: { primary: "#FFFFFF", secondary: "#A3A3A3" }, // ✅ Adjusted contrast
+                background: { default: "#121212", paper: "#1E1E1E" }, // Dark theme vibes
+                text: { primary: "#EAEAEA", secondary: "#A3A3A3" },
+                accent: "#BB86FC", // Cool accent color for dark mode
               }
             : {
-                background: { default: "#FFFFFF", paper: "#F5F5F5" }, // ✅ Light Mode
-                text: { primary: "#000000", secondary: "#333333" },
+                background: { default: "#FFFFFF", paper: "#F5F5F5" },
+                text: { primary: "#222", secondary: "#555" },
+                accent: "#6200EE", // Vibrant color for light mode
               }),
+        },
+        typography: {
+          fontFamily: '"Poppins", sans-serif', // Modern font choice
+          allVariants: { transition: "color 0.3s ease-in-out" }, // Smooth text transitions
+        },
+        components: {
+          MuiPaper: {
+            styleOverrides: {
+              root: {
+                transition: "background-color 0.3s ease-in-out, box-shadow 0.3s",
+                boxShadow: mode === "dark" ? "0px 4px 12px rgba(255, 255, 255, 0.1)" : "0px 4px 12px rgba(0, 0, 0, 0.1)",
+              },
+            },
+          },
         },
       }),
     [mode]
   );
-
+  
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--bg-color",
@@ -42,6 +58,13 @@ export default function CustomThemeProvider({ children }) {
       "--text-color",
       theme.palette.text.primary
     );
+    document.documentElement.style.setProperty(
+      "--accent-color",
+      theme.palette.accent
+    );
+    
+    // Add a smooth transition when changing themes
+    document.body.style.transition = "background-color 0.5s ease, color 0.5s ease";
   }, [theme]);
 
   return (
