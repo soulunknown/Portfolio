@@ -3,19 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Title -->
-    <title>Henry Lewis | Portfolio</title>
+
+    <!-- Title & SEO Description -->
+    <title>Henry Lewis | Web Developer & Creator</title>
+    <meta name="description" content="Official portfolio of Henry Lewis. Showcasing web development, software projects, and tech skills.">
+    <meta name="keywords" content="Henry Lewis, web developer, software engineer, React, JavaScript, portfolio">
+    <meta name="author" content="Henry Lewis">
+
+    <!-- Open Graph for Social Media (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Henry Lewis | Web Developer & Creator">
+    <meta property="og:description" content="Explore my portfolio where I showcase my work, skills, and latest projects.">
+    <meta property="og:image" content="https://www.henryrosslewis.com/shot.webp">
+    <meta property="og:url" content="https://www.henryrosslewis.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card for Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Henry Lewis | Web Developer & Creator">
+    <meta name="twitter:description" content="Check out my portfolio with my latest work and skills.">
+    <meta name="twitter:image" content="https://www.henryrosslewis.com/shot.webp">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6a0dad">
+
+    <!-- Structured Data (JSON-LD) for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Henry Lewis",
+      "url": "https://www.henryrosslewis.com",
+      "sameAs": [
+        "https://github.com/henrylewis",
+        "https://linkedin.com/in/henrylewis"
+      ],
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      }
+    }
+    </script>
+
+    <!-- CSS Reset & Smooth Theme Transitions -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: var(--bg-color, #ffffff);
+        color: var(--text-color, #222);
+        font-family: "Poppins", sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Main JS -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

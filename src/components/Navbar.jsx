@@ -70,7 +70,7 @@ export default function Navbar() {
         >
           {/* Avatar */}
           <Avatar
-            src="/henlew.jpg"
+            src="/henlew.webp"
             alt="Henry Lewis"
             sx={{
               width: 50,
@@ -151,7 +151,7 @@ export default function Navbar() {
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", p: 2 }}>
           <Avatar
-            src="/henlew.jpg"
+            src="/henlew.webp"
             alt="Henry Lewis"
             sx={{
               width: 80,
