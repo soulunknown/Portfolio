@@ -42,7 +42,7 @@ export default function Hero() {
             I'm Henry Lewis, a Full-Stack Developer, Music Producer, and Creative Thinker from Louisiana.
           </Typography>
 
-          {/* Bullet Points */}
+          
           <Box sx={{ textAlign: "left", display: "inline-block" }}>
             <Typography sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <CodeIcon sx={{ color: "#6a0dad", mr: 1 }} /> Passionate about building intuitive web applications.
@@ -58,22 +58,8 @@ export default function Hero() {
             </Typography>
           </Box>
 
-          {/* Buttons */}
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-            <Button variant="contained" color="primary" sx={{ fontWeight: "bold", px: 3 }}>
-              VIEW MY PROJECTS
-            </Button>
-            <Button 
-              variant="outlined" 
-              sx={{ 
-                fontWeight: "bold", 
-                borderColor: theme.palette.mode === "dark" ? "#A97FDB" : "#6a0dad", // ✅ Adjusted purple in Dark Mode
-                color: theme.palette.mode === "dark" ? "#A97FDB" : "#6a0dad", 
-                px: 3 
-              }}>
-              LISTEN TO MUSIC
-            </Button>
-          </Box>
+        
+    
         </CardContent>
       </Card>
     </Box>
