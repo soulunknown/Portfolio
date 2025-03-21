@@ -10,7 +10,7 @@ import Experience from "./pages/Experience.jsx";
 import Education from "./pages/Education.jsx"; 
 
 export default function App() {
-  const theme = useTheme(); // ✅ Get current theme (light/dark)
+  const theme = useTheme(); 
 
   return (
     <CustomThemeProvider>
@@ -18,8 +18,8 @@ export default function App() {
         sx={{
           minHeight: "100vh",
           width: "100%",
-          backgroundColor: theme.palette.background.default, // ✅ Fix background globally
-          color: theme.palette.text.primary, // ✅ Ensure text is readable
+          backgroundColor: theme.palette.background.default, 
+          color: theme.palette.text.primary, 
           transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
           display: "flex",
           flexDirection: "column",
@@ -29,7 +29,7 @@ export default function App() {
         <Container
           maxWidth="md"
           sx={{
-            backgroundColor: "transparent", // ✅ No forced white background
+            backgroundColor: "transparent", 
             color: theme.palette.text.primary,
             padding: 4,
             transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out",

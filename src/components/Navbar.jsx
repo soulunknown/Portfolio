@@ -21,15 +21,12 @@ import {
   Menu as MenuIcon
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ColorModeContext } from "../ThemeProvider";
 
 export default function Navbar() {
   const { toggleColorMode } = useContext(ColorModeContext);
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  
-
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleDrawerToggle = () => {
@@ -79,16 +76,15 @@ export default function Navbar() {
             }}
           />
 
-         
           {!isMobile && (
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexGrow: 1, // ✅ Ensures spacing is even
-                gap: 4, // ✅ Adjusts spacing dynamically
-                textAlign: "center", // ✅ Makes sure text is centered
+                flexGrow: 1, 
+                gap: 4, 
+                textAlign: "center", 
               }}
             >
               {navItems.map((item) => (
@@ -126,7 +122,6 @@ export default function Navbar() {
             </Box>
           )}
 
-          
           {isMobile && (
             <IconButton edge="end" color="inherit" onClick={handleDrawerToggle}>
               <MenuIcon />
@@ -137,12 +132,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer
+      anchor="right"
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
         sx={{
-          display: { xs: "block", lg: "none" }, 
+          display: { xs: "block", lg: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: "75vw",
@@ -172,10 +168,23 @@ export default function Navbar() {
               </ListItem>
             ))}
           </List>
+
+          {/* Mobile Icons and Dark Mode Toggle */}
+          <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 2 }}>
+            <IconButton color="inherit" component="a" href="https://github.com/soulunknown">
+              <GitHub />
+            </IconButton>
+            <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/henryrlewis/">
+              <LinkedIn />
+            </IconButton>
+            <IconButton color="inherit" onClick={toggleColorMode}>
+              <Brightness4 />
+            </IconButton>
+          </Box>
         </Box>
       </Drawer>
 
-      {/* Spacer for Navbar (Fix Overlapping Issue) */}
+     
       <Box sx={{ marginTop: "80px" }} />
     </>
   );
