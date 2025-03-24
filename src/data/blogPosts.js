@@ -11,7 +11,7 @@ export const blogPosts = [
   
         <p>It used to stress me out. I’d look around and see people staying focused, finishing projects, moving in a straight line. Meanwhile, I was hopping between ideas, leaving things undone, second-guessing if I was even making progress.</p>
   
-        <p>But I’ve noticed something. Even when I don’t finish something, I still get something out of it. A new idea, a better feel for a tool, or just a little spark I might come back to later. And sometimes, I do come back. Not always, but enough.</p>
+        <p>But I’ve noticed something. Even when I don’t finish something, I still get something out of it. A new idea, a new found knowledge, or just a little spark I might come back to later. And sometimes, I do come back. Not always, but enough.</p>
   
         <p>It’s not the cleanest process. Definitely not the most efficient. But it’s real. It’s how my creativity works right now, and maybe that’s okay.</p>
   
