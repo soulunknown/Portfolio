@@ -15,10 +15,11 @@ import {
   useTheme
 } from "@mui/material";
 import {
-  Brightness4,
   GitHub,
   LinkedIn,
-  Menu as MenuIcon
+  Menu as MenuIcon,
+  DarkMode,
+  LightMode
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { ColorModeContext } from "../ThemeProvider";
@@ -39,22 +40,24 @@ export default function Navbar() {
     { label: "Education", path: "/education" },
     { label: "Music", path: "/music" },
     { label: "Projects", path: "/projects" },
-    { label: "Blog", path: "/blog" },       // ⬅️ Added this line
+    { label: "Blog", path: "/blog" },
     { label: "Contact", path: "/contact" }
   ];
-  
+
+  const bgColor = theme.palette.mode === "dark" ? "#8B0000" : "#6a0dad";
 
   return (
     <>
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "#6a0dad",
+          backgroundColor: bgColor,
           height: 70,
           display: "flex",
           justifyContent: "center",
           paddingX: 2,
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+          transition: "background-color 0.3s ease-in-out",
         }}
       >
         <Toolbar
@@ -84,9 +87,9 @@ export default function Navbar() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexGrow: 1, 
-                gap: 4, 
-                textAlign: "center", 
+                flexGrow: 1,
+                gap: 4,
+                textAlign: "center",
               }}
             >
               {navItems.map((item) => (
@@ -100,7 +103,10 @@ export default function Navbar() {
                     fontWeight: "bold",
                     textTransform: "none",
                     transition: "all 0.3s ease-in-out",
-                    "&:hover": { transform: "scale(1.1)" },
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      color: theme.palette.mode === "dark" ? "#ffaaaa" : "#ffe6ff",
+                    },
                   }}
                 >
                   {item.label}
@@ -109,17 +115,30 @@ export default function Navbar() {
             </Box>
           )}
 
-          {/* Icons */}
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 2 }}>
-              <IconButton color="inherit" component="a" href="https://github.com/soulunknown">
+              <IconButton title="GitHub" color="inherit" component="a" href="https://github.com/soulunknown">
                 <GitHub />
               </IconButton>
-              <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/henryrlewis/">
+              <IconButton title="LinkedIn" color="inherit" component="a" href="https://www.linkedin.com/in/henryrlewis/">
                 <LinkedIn />
               </IconButton>
-              <IconButton color="inherit" onClick={toggleColorMode}>
-                <Brightness4 />
+              <IconButton
+                title="Toggle Theme"
+                color="inherit"
+                onClick={toggleColorMode}
+                sx={{
+                  transition: "transform 0.4s ease",
+                  "& svg": {
+                    transform: "rotate(0deg)",
+                    transition: "transform 0.4s ease",
+                  },
+                  "&:active svg": {
+                    transform: "rotate(180deg)",
+                  },
+                }}
+              >
+                {theme.palette.mode === "dark" ? <LightMode /> : <DarkMode />}
               </IconButton>
             </Box>
           )}
@@ -134,7 +153,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer
-      anchor="right"
+        anchor="right"
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
@@ -144,6 +163,9 @@ export default function Navbar() {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: "75vw",
+            backgroundColor: bgColor,
+            color: "#fff",
+            transition: "background-color 0.3s ease-in-out",
           }
         }}
       >
@@ -171,22 +193,36 @@ export default function Navbar() {
             ))}
           </List>
 
-          {/* Mobile Icons and Dark Mode Toggle */}
+          {/* Mobile Icons and Theme Toggle */}
           <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 2 }}>
-            <IconButton color="inherit" component="a" href="https://github.com/soulunknown">
+            <IconButton title="GitHub" color="inherit" component="a" href="https://github.com/soulunknown">
               <GitHub />
             </IconButton>
-            <IconButton color="inherit" component="a" href="https://www.linkedin.com/in/henryrlewis/">
+            <IconButton title="LinkedIn" color="inherit" component="a" href="https://www.linkedin.com/in/henryrlewis/">
               <LinkedIn />
             </IconButton>
-            <IconButton color="inherit" onClick={toggleColorMode}>
-              <Brightness4 />
+            <IconButton
+              title="Toggle Theme"
+              color="inherit"
+              onClick={toggleColorMode}
+              sx={{
+                transition: "transform 0.4s ease",
+                "& svg": {
+                  transform: "rotate(0deg)",
+                  transition: "transform 0.4s ease",
+                },
+                "&:active svg": {
+                  transform: "rotate(180deg)",
+                },
+              }}
+            >
+              {theme.palette.mode === "dark" ? <LightMode /> : <DarkMode />}
             </IconButton>
           </Box>
         </Box>
       </Drawer>
 
-     
+      {/* Spacer below navbar */}
       <Box sx={{ marginTop: "80px" }} />
     </>
   );
