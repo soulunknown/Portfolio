@@ -39,8 +39,10 @@ export default function Navbar() {
     { label: "Education", path: "/education" },
     { label: "Music", path: "/music" },
     { label: "Projects", path: "/projects" },
+    { label: "Blog", path: "/blog" },       // ⬅️ Added this line
     { label: "Contact", path: "/contact" }
   ];
+  
 
   return (
     <>
