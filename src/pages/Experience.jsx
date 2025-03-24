@@ -18,9 +18,16 @@ const experienceSections = [
     icon: <WorkIcon sx={{ fontSize: 40, color: "#6a0dad" }} />,
     experiences: [
       {
+        role: "Carpet Technician",
+        company: "Stanley Steemer · Full-time",
+        dates: "Mar 2025 – Present",
+        location: "Scott, Louisiana",
+        skills: "Customer Service, Equipment Operation, Deep Cleaning",
+      },
+      {
         role: "Delivery Driver",
         company: "DoorDash · Part-time",
-        dates: "Nov 2024 – Present · 5 mos",
+        dates: "Nov 2024 – Present",
       },
       {
         role: "Pharmaceutical Packaging Technician",
@@ -46,6 +53,7 @@ const experienceSections = [
     ],
   },
 ];
+
 
 function Experience() {
   const theme = useTheme();
