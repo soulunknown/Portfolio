@@ -1,5 +1,22 @@
 export const blogPosts = [
   {
+    id: "wrapping-up-my-first-week",
+    title: "Wrapping Up My First Week",
+    date: "2025-03-29",
+    summary: "First week as an assistant at Stanley Steemer — learning the ropes, setting up equipment, and working under the crew chief.",
+    content: `
+      <p>Just wrapped up my first week as an assistant at Stanley Steemer. My main job is setting up equipment, rolling out hoses, and making sure everything’s ready for the crew chief to do the cleaning.</p>
+
+      <p>The crew chief is the one who drives the van, handles the carpet wand, and makes sure the job gets done right. I’m mostly there to support — setting up hoses, keeping things organized, and making sure the equipment’s working like it should. Basically, making the crew chief’s job easier so things run smooth.</p>
+
+      <p>They’ve had me working on grout cleaning here and there. It’s tougher than it looks, especially when the grout lines are stained deep. You can’t just blast through it and expect it to be clean. It’s all about working the equipment right and paying attention to details. The crew chief’s shown me some tricks to make it go faster, but it’s definitely something you get better at with practice.</p>
+
+      <p>The crew I’m working with is solid. They’ve been patient showing me the ropes and letting me figure things out. I’m not using the carpet wand yet — that’s all the crew chief — but I’m picking up on how everything works and getting the setup part down.</p>
+
+      <p>It’s just the first week, but I’m getting the hang of it. Mostly just trying to do my part and stay out of the way. I’ll get there.</p>
+    `
+  },
+  {
     id: "new-hire-paperwork-done",
     title: "New Hire Paperwork Done",
     date: "2025-03-24",
@@ -26,7 +43,7 @@ export const blogPosts = [
 
       <p>It used to stress me out. I’d look around and see people staying focused, finishing projects, moving in a straight line. Meanwhile, I was hopping between ideas, leaving things undone, second-guessing if I was even making progress.</p>
 
-      <p>But I’ve noticed something. Even when I don’t finish something, I still get something out of it. A new idea, new found knowledge, or just a little spark I might come back to later. And sometimes, I do come back. Not always, but enough.</p>
+      <p>But I’ve noticed something. Even when I don’t finish something, I still get something out of it. A new idea, newfound knowledge, or just a little spark I might come back to later. And sometimes, I do come back. Not always, but enough.</p>
 
       <p>It’s not the cleanest process. Definitely not the most efficient. But it’s real. It’s how my creativity works right now, and maybe that’s okay.</p>
 
@@ -34,6 +51,5 @@ export const blogPosts = [
 
       <p>That part feels important.</p>
     `
-  },
-
+  }
 ];
