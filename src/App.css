@@ -8,15 +8,15 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--bg-color); /* ✅ Use CSS variable from JS */
-  color: var(--text-color); /* ✅ Auto-adjusts text color */
+  background-color: var(--bg-color); 
+  color: var(--text-color); 
   text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in-out; /* ✅ Smooth transition */
+  transition: background-color 0.3s ease-in-out; 
 }
 
 
