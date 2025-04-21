@@ -1,4 +1,4 @@
-import { Container, Grid, Box, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import ProjectCard from "../components/ProjectCard.jsx";
 import { motion } from "framer-motion";
 
@@ -24,64 +24,29 @@ const projects = [
     link: "https://github.com/soulunknown/cookie-man",
     techStack: ["React", "Stripe API", "Firebase", "Next.js"],
   },
+
 ];
 
 export default function Projects() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "100vh",
-        width: "100%",
-        px: 3,
-        py: 5,
-      }}
-    >
-      
-      <Typography
-        variant="h3"
-        sx={{
-          fontWeight: "bold",
-          textAlign: "center",
-          mb: 3,
-          textShadow: "2px 2px 6px rgba(106, 13, 173, 0.3)",
-        }}
-      >
+    <Container maxWidth="lg" sx={{ py: 5 }}>
+      <Typography variant="h3" align="center" color="primary" fontWeight="bold" gutterBottom>
         Projects
       </Typography>
-      
-      <Typography
-        variant="h6"
-        color="text.secondary"
-        sx={{ textAlign: "center", maxWidth: "600px", mb: 5 }}
-      >
+
+      <Typography variant="h6" align="center" color="textSecondary" gutterBottom>
         Click to learn more!
       </Typography>
 
-      <Container maxWidth="md">
-        <Grid container spacing={4} justifyContent="center">
-          {projects.map((project, index) => (
-            <Grid 
-              item 
-              xs={12} 
-              key={index}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-             
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                style={{ width: "100%" }}
-              >
-                <ProjectCard {...project} />
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+      <Grid container spacing={4} justifyContent="center" mt={4}>
+        {projects.map((project, index) => (
+          <Grid item xs={12} sm={10} md={8} key={index} display="flex" justifyContent="center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.2 }} style={{ width: "100%" }}>
+              <ProjectCard {...project} />
+            </motion.div>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 }

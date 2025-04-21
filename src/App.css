@@ -1,62 +1,45 @@
-/* Global Styles */
 * {
-  
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Prevents layout shift */
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: var(--bg-color); 
-  color: var(--text-color); 
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease-in-out; 
+  justify-content: flex-start;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-
-/* Root Container */
 #root {
   width: 100%;
-  min-height: 100vh; /* Allows the content to expand */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem;
-  text-align: center;
 }
 
-/* Logo Styling */
 .logo {
-  max-width: 80%; /* Ensures responsiveness */
-  height: auto; /* Allows scaling */
+  max-width: 80%;
+  height: auto;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 2em var(--accent-color));
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* Logo Animation */
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -65,23 +48,27 @@ body {
   }
 }
 
-/* Card Styling */
 .card {
   padding: 2rem;
   width: 90%;
   max-width: 600px;
-  background: rgb(144, 48, 48);
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
+  background: var(--background-paper, #161616);
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  margin: 1.5rem 0;
 }
 
-/* Read The Docs Text */
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 12px 30px rgba(106, 13, 173, 0.5);
+}
+
 .read-the-docs {
-  color: #888;
+  color: var(--text-secondary, #999);
+  font-size: 0.95rem;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   #root {
     padding: 1rem;

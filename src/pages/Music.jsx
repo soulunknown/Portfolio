@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const musicSections = [
   {
     title: "Music",
-    icon: <MusicNoteIcon sx={{ fontSize: 40, color: "#d9534f" }} />,
+    icon: <MusicNoteIcon color="error" sx={{ fontSize: 40 }} />,
     experiences: [
       {
         role: "Solo Artist & Producer",
@@ -27,64 +27,46 @@ const musicSections = [
 ];
 
 export default function Music() {
-  const theme = useTheme();
-  const isDarkMode = theme.palette.mode === "dark";
-
   return (
-    <Container maxWidth="lg" sx={{ textAlign: "center", mt: 5, px: { xs: 2, md: 0 } }}>
-      
+    <Container maxWidth="lg">
   
 
-      
-      <Grid container spacing={4} sx={{ mt: 4 }}>
+      <Grid container spacing={4} mt={4}>
         {musicSections.map((section, index) => (
           <Grid item xs={12} key={index}>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <Card
-                sx={{
-                  boxShadow: isDarkMode
-                    ? "0 0 15px rgba(255, 255, 255, 0.1)"
-                    : "0 0 15px rgba(217, 83, 79, 0.3)",
-                  borderRadius: 3,
-                  p: 2,
-                  backgroundColor: theme.palette.background.paper,
-                  color: theme.palette.text.primary,
-                }}
-              >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.2 }}>
+              <Card>
                 <CardContent>
-                  <Box sx={{ display: "flex", alignItems: "center", mb: 2, justifyContent: "center" }}>
+                  <Box display="flex" alignItems="center" justifyContent="center" mb={3}>
                     {section.icon}
-                    <Typography variant="h5" sx={{ ml: 2, fontWeight: "bold" }}>
+                    <Typography variant="h5" ml={2}>
                       {section.title}
                     </Typography>
                   </Box>
+
                   {section.experiences.map((exp, i) => (
-                    <Box key={i} sx={{ mb: 3, textAlign: "left" }}>
-                      <Typography variant="h6" sx={{ fontWeight: "bold", color: "#d9534f" }}>
+                    <Box key={i} mb={3} textAlign="left">
+                      <Typography variant="h6" color="error" gutterBottom>
                         {exp.role}
                       </Typography>
-                      <Typography variant="body1" color="text.secondary">
+                      <Typography variant="body1" color="textSecondary">
                         {exp.company}
                       </Typography>
-                      <Typography variant="body2" sx={{ fontStyle: "italic", color: theme.palette.text.secondary }}>
+                      <Typography variant="body2" color="textSecondary" fontStyle="italic" gutterBottom>
                         {exp.dates}
                       </Typography>
                       {exp.details && (
-                        <Typography variant="body2" sx={{ mt: 1 }}>
+                        <Typography variant="body2">
                           {exp.details}
                         </Typography>
                       )}
                       {exp.notable && (
-                        <Typography variant="body2" sx={{ mt: 1, fontWeight: "bold" }}>
+                        <Typography variant="body2" fontWeight="bold">
                           {exp.notable}
                         </Typography>
                       )}
                       {exp.skills && (
-                        <Typography variant="body2" sx={{ mt: 1 }}>
+                        <Typography variant="body2">
                           <strong>Skills:</strong> {exp.skills}
                         </Typography>
                       )}
@@ -97,46 +79,29 @@ export default function Music() {
         ))}
       </Grid>
 
-      
-      <Box sx={{ mt: 5 }}>
-        <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", textShadow: "2px 2px 6px rgba(217, 83, 79, 0.3)" }}>
-          Listen on Spotify
-        </Typography>
-
-        {/* Spotify Embed Grid */}
+      <Box mt={6} textAlign="center">
+   
         <Grid container spacing={3} justifyContent="center">
-          {/* First Spotify Player */}
-          <Grid item xs={12} sm={6} sx={{ display: "flex", justifyContent: "center" }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
+          <Grid item xs={12} sm={6} display="flex" justifyContent="center">
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
               <iframe
                 style={{ borderRadius: "12px", width: "100%", maxWidth: "600px" }}
                 src="https://open.spotify.com/embed/artist/0NfkWfj6ZOV05fwGodsQnU?utm_source=generator&theme=0"
                 height="352"
                 frameBorder="0"
-                allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
               ></iframe>
             </motion.div>
           </Grid>
 
-          {/* Second Spotify Player */}
-          <Grid item xs={12} sm={6} sx={{ display: "flex", justifyContent: "center" }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
+          <Grid item xs={12} sm={6} display="flex" justifyContent="center">
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.4 }}>
               <iframe
                 style={{ borderRadius: "12px", width: "100%", maxWidth: "600px" }}
                 src="https://open.spotify.com/embed/artist/1bystgPo0YQMMSFgrr3ZNM?utm_source=generator"
                 height="352"
                 frameBorder="0"
-                allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
               ></iframe>

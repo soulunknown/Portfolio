@@ -1,24 +1,14 @@
-import { 
-  Container, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Typography, 
-  Box, 
-  Divider, 
-  useTheme 
-} from "@mui/material";
+import { Container, Grid, Card, CardContent, Typography, Box, Divider, useTheme } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import { motion } from "framer-motion";
-
 
 const experienceSections = [
   {
     title: "Professional Experience",
-    icon: <WorkIcon sx={{ fontSize: 40, color: "#6a0dad" }} />,
+    icon: <WorkIcon color="primary" sx={{ fontSize: 40 }} />,
     experiences: [
       {
-        role: "Carpet Technician",
+        role: "Technician",
         company: "Stanley Steemer · Full-time",
         dates: "Mar 2025 – Present",
         location: "Scott, Louisiana",
@@ -54,76 +44,43 @@ const experienceSections = [
   },
 ];
 
-
-function Experience() {
+export default function Experience() {
   const theme = useTheme();
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 5, pb: 5 }}>
+    <Container maxWidth="lg">
      
-      <Typography 
-        variant="h3" 
-        sx={{ 
-          textAlign: "center", 
-          fontWeight: "bold", 
-          mb: 4, 
-          textShadow: "2px 2px 6px rgba(106, 13, 173, 0.3)"
-        }}
-      >
-        Experience
-      </Typography>
 
       <Grid container spacing={4}>
         {experienceSections.map((section, index) => (
           <Grid item xs={12} key={index}>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <Card
-                sx={{
-                  boxShadow: theme.palette.mode === "dark" 
-                    ? "0 0 15px rgba(255, 255, 255, 0.1)" 
-                    : "0 0 15px rgba(106, 13, 173, 0.3)",
-                  borderRadius: 3,
-                  backgroundColor: theme.palette.background.paper,
-                  color: theme.palette.text.primary,
-                }}
-              >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }}>
+              <Card>
                 <CardContent>
-                  
-                  <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                  <Box display="flex" alignItems="center" mb={3}>
                     {section.icon}
-                    <Typography variant="h5" sx={{ ml: 2, fontWeight: "bold" }}>
+                    <Typography variant="h5" ml={2}>
                       {section.title}
                     </Typography>
                   </Box>
 
-                 
                   {section.experiences.map((exp, i) => (
-                    <Box key={i} sx={{ mb: 3 }}>
-                      <Typography variant="h6" sx={{ fontWeight: "bold", color: "#6a0dad" }}>
+                    <Box key={i} mb={3}>
+                      <Typography variant="h6" color="primary" gutterBottom>
                         {exp.role}
                       </Typography>
-                      <Typography variant="body1" color="text.secondary">
+                      <Typography variant="body1" color="textSecondary">
                         {exp.company}
                       </Typography>
-                      <Typography variant="body2" sx={{ fontStyle: "italic", color: theme.palette.text.secondary }}>
+                      <Typography variant="body2" color="textSecondary" fontStyle="italic" gutterBottom>
                         {exp.dates}
                       </Typography>
-
                       {exp.skills && (
-                        <Typography variant="body2" sx={{ mt: 1 }}>
+                        <Typography variant="body2">
                           <strong>Skills:</strong> {exp.skills}
                         </Typography>
                       )}
-
-                      
-                      {i < section.experiences.length - 1 && (
-                        <Divider sx={{ my: 2, borderColor: "rgba(106, 13, 173, 0.3)" }} />
-                      )}
+                      {i < section.experiences.length - 1 && <Divider sx={{ my: 2 }} />}
                     </Box>
                   ))}
                 </CardContent>
@@ -135,6 +92,3 @@ function Experience() {
     </Container>
   );
 }
-
-export default Experience;
-

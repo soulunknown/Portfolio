@@ -21,24 +21,24 @@ export default function CustomThemeProvider({ children }) {
           mode,
           primary: { main: "#6a0dad" },
           secondary: { main: "#03dac6" },
-          ...(mode === "dark"
-            ? {
-                background: { default: "#121212", paper: "#1E1E1E" },
-                text: { primary: "#EAEAEA", secondary: "#A3A3A3" },
-                accent: "#BB86FC",
-              }
-            : {
-                background: { default: "#FFFFFF", paper: "#F5F5F5" },
-                text: { primary: "#222", secondary: "#555" },
-                accent: "#6200EE",
-              }),
+          accent: mode === "dark" ? "#bb86fc" : "#6200ee",
+          background: {
+            default: mode === "dark" ? "#0d0d0d" : "#f3f3f3",
+            paper: mode === "dark" ? "#161616" : "#fafafa",
+            hero: mode === "dark" ? "#121212" : "#ffffff",
+            footer: mode === "dark" ? "#0a0a0a" : "#f0f0f0",
+          },
+          text: {
+            primary: mode === "dark" ? "#cccccc" : "#333333",
+            secondary: mode === "dark" ? "#999999" : "#555555",
+          },
         },
         typography: {
           fontFamily: '"Poppins", sans-serif',
-          h1: { fontWeight: 700, fontSize: "3rem" },
-          h2: { fontWeight: 600, fontSize: "2.25rem" },
-          h3: { fontWeight: 600, fontSize: "1.75rem" },
-          body1: { fontSize: "1rem", lineHeight: 1.6 },
+          h1: { fontWeight: 700, fontSize: "4rem", letterSpacing: "1px" },
+          h2: { fontWeight: 600, fontSize: "3rem" },
+          h3: { fontWeight: 600, fontSize: "2.25rem" },
+          body1: { fontSize: "1.1rem", lineHeight: 1.6 },
           allVariants: { transition: "color 0.3s ease-in-out" },
         },
         components: {
@@ -48,21 +48,24 @@ export default function CustomThemeProvider({ children }) {
                 transition: "background-color 0.3s ease-in-out, box-shadow 0.3s",
                 boxShadow:
                   mode === "dark"
-                    ? "0px 4px 12px rgba(255, 255, 255, 0.1)"
-                    : "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                    ? "0px 4px 12px rgba(255, 255, 255, 0.05)"
+                    : "0px 4px 12px rgba(0, 0, 0, 0.08)",
               },
             },
           },
           MuiButton: {
             styleOverrides: {
               root: {
+                borderRadius: "999px",
+                textTransform: "none",
+                fontWeight: 600,
+                background: "linear-gradient(135deg, #6a0dad 0%, #9d50bb 100%)",
                 transition: "all 0.3s ease-in-out",
+                boxShadow: "0px 4px 12px rgba(106,13,173,0.4)",
                 "&:hover": {
+                  background: "linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)",
                   transform: "scale(1.05)",
-                  boxShadow:
-                    mode === "dark"
-                      ? "0px 0px 10px rgba(187, 134, 252, 0.4)"
-                      : "0px 0px 10px rgba(98, 0, 238, 0.4)",
+                  boxShadow: "0px 6px 18px rgba(106,13,173,0.6)",
                 },
               },
             },
@@ -78,7 +81,6 @@ export default function CustomThemeProvider({ children }) {
     document.documentElement.style.setProperty("--accent-color", theme.palette.accent);
     document.documentElement.style.setProperty("--primary-color", theme.palette.primary.main);
     document.documentElement.style.setProperty("--secondary-color", theme.palette.secondary.main);
-
     document.body.style.transition = "background-color 0.5s ease, color 0.5s ease";
   }, [theme]);
 
