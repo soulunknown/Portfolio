@@ -46,10 +46,34 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="fixed" color="primary">
-        <Toolbar sx={{ maxWidth: 1200, width: "100%", mx: "auto", justifyContent: "space-between" }}>
-          <Avatar src="/henlew.webp" alt="Henry Lewis" sx={{ width: 50, height: 50 }} />
-
+    <AppBar position="fixed" color="primary">
+  <Toolbar
+    sx={{
+      maxWidth: 1200,
+      width: "100%",
+      mx: "auto",
+      justifyContent: "space-between",
+      py: 1.5,
+    }}
+  >
+<Link to="/" style={{ textDecoration: "none" }}>
+  <Avatar
+    src="/henlew2.webp"
+    alt="Henry Lewis"
+    sx={{
+      width: 80,
+      height: 80,
+      borderRadius: "50%",
+      cursor: "pointer",
+      transition: "all 0.3s ease-in-out",
+      "&:hover": {
+        transform: "scale(1.05)",
+        boxShadow: "0 0 0 4px rgb(255, 201, 7)",
+      },
+    }}
+  />
+</Link>
+ 
           {!isMobile && (
             <Box display="flex" alignItems="center" gap={4}>
               {navItems.map((item) => (
@@ -91,7 +115,7 @@ export default function Navbar() {
         PaperProps={{ sx: { width: "75vw", backgroundColor: theme.palette.primary.main, color: "#fff" } }}
       >
         <Box textAlign="center" mt={2}>
-          <Avatar src="/henlew.webp" alt="Henry Lewis" sx={{ width: 80, height: 80, mb: 2, mx: "auto" }} />
+          <Avatar src="/henlew2.webp" alt="Henry Lewis" sx={{ width: 90, height: 90, mb: 2, mx: "auto" }} />
           <List>
             {navItems.map((item) => (
               <ListItem key={item.label} disablePadding>

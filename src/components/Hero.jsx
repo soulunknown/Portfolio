@@ -1,4 +1,11 @@
-import { Card, CardContent, Typography, Box, Button, useTheme } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Button,
+  useTheme,
+} from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,41 +16,149 @@ export default function Hero() {
   const theme = useTheme();
 
   return (
-    <Box display="flex" justifyContent="center" mt={5} px={2}>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <Card>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        mt: 10,
+        px: 2,
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
+      {/* Ambient background light effect */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: -60,
+          left: -60,
+          width: 300,
+          height: 300,
+          background: "radial-gradient(circle, rgba(106,13,173,0.3), transparent 70%)",
+          filter: "blur(60px)",
+          zIndex: 0,
+        }}
+      />
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Card
+          sx={{
+            maxWidth: 820,
+            p: { xs: 3, sm: 5 },
+            textAlign: "center",
+            borderRadius: 6,
+            background:
+              theme.palette.mode === "dark"
+                ? "rgba(255, 255, 255, 0.05)"
+                : "rgba(255, 255, 255, 0.75)",
+            backdropFilter: "blur(12px)",
+            boxShadow: theme.palette.mode === "dark"
+              ? "0px 15px 35px rgba(255,255,255,0.05)"
+              : "0px 15px 35px rgba(0,0,0,0.1)",
+          }}
+        >
           <CardContent>
-            <Typography variant="h2" color="primary" align="center" gutterBottom>
-              Portfolio
-            </Typography>
-            <Typography variant="h6" color="textSecondary" align="center" paragraph>
-              I'm Henry Lewis, a Full-Stack Developer, Music Producer, and Creative Thinker from Louisiana.
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "2.2rem", sm: "3rem", md: "3.5rem" },
+                background: "linear-gradient(90deg,rgb(81, 255, 6),rgb(221, 2, 255))",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                animation: "pulseText 5s ease-in-out infinite",
+                mb: 2,
+                "@keyframes pulseText": {
+                  "0%": { backgroundPosition: "0% center" },
+                  "50%": { backgroundPosition: "100% center" },
+                  "100%": { backgroundPosition: "0% center" },
+                },
+              }}
+            >
+              Henry Lewis
             </Typography>
 
-            <Box textAlign="left" maxWidth={600} margin="auto">
-              <Box display="flex" alignItems="center" mb={1}>
-                <CodeIcon color="primary" sx={{ mr: 1 }} />
-                <Typography variant="body1">Passionate about building intuitive web applications.</Typography>
-              </Box>
-              <Box display="flex" alignItems="center" mb={1}>
-                <MusicNoteIcon sx={{ color: theme.palette.error.main, mr: 1 }} />
-                <Typography variant="body1">Creating music that resonates and tells a story.</Typography>
-              </Box>
-              <Box display="flex" alignItems="center" mb={1}>
-                <SearchIcon color="primary" sx={{ mr: 1 }} />
-                <Typography variant="body1">Exploring new opportunities in tech and music.</Typography>
-              </Box>
-              <Box display="flex" alignItems="center" mb={2}>
-                <ConnectWithoutContactIcon color="primary" sx={{ mr: 1 }} />
-                <Typography variant="body1">Excited to connect and collaborate with others.</Typography>
-              </Box>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                color: theme.palette.text.secondary,
+                mb: 4,
+                maxWidth: 640,
+                margin: "0 auto",
+                lineHeight: 1.0,
+              }}
+            >
+              
+              I'm a developer and music producer from Louisiana who likes building cool stuff, telling stories, and figuring things out along the way.
+              
+            </Typography>
+            
+
+            <Box
+              sx={{
+                textAlign: "left",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 2,
+                maxWidth: 600,
+                margin: "0 auto 32px auto",
+                mt: 4,
+              }}
+            >
+              <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <CodeIcon sx={{ color: "#6a0dad", mr: 1 }} />
+                  <Typography>Crafting experiences with elegant code.</Typography>
+                </Box>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <MusicNoteIcon sx={{ color: "#d9534f", mr: 1 }} />
+                  <Typography>Producing music that hits in all the right places.</Typography>
+                </Box>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <SearchIcon sx={{ color: "gold", mr: 1 }} />
+                  <Typography>Always exploring new ideas and ways to grow.</Typography>
+                </Box>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <ConnectWithoutContactIcon sx={{ color: "green", mr: 1 }} />
+                  <Typography>Down to collaborate or just talk shop.</Typography>
+                </Box>
+              </motion.div>
             </Box>
 
-            <Box textAlign="center">
-              <Button variant="contained" color="primary" size="large" href="#contact">
-                Let’s Connect
-              </Button>
-            </Box>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              href="#contact"
+              sx={{
+                px: 5,
+                borderRadius: "50px",
+                fontWeight: 600,
+                textTransform: "none",
+                boxShadow: "0 6px 15px rgba(106, 13, 173, 0.3)",
+                "&:hover": {
+                  boxShadow: "0 8px 20px rgba(106, 13, 173, 0.5)",
+                  transform: "scale(1.05)",
+                },
+              }}
+            >
+              Reach Out
+            </Button>
           </CardContent>
         </Card>
       </motion.div>
