@@ -67,7 +67,7 @@ export default function Hero() {
               sx={{
                 fontWeight: 700,
                 fontSize: { xs: "2.2rem", sm: "3rem", md: "3.5rem" },
-                background: "linear-gradient(90deg,rgb(81, 255, 6),rgb(221, 2, 255))",
+                background: "linear-gradient(90deg,rgb(72, 108, 192),rgb(235, 43, 43))",
                 backgroundSize: "200% auto",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -93,11 +93,8 @@ export default function Hero() {
                 lineHeight: 1.0,
               }}
             >
-              
-              I'm a developer and music producer from Louisiana who likes building cool stuff, telling stories, and figuring things out along the way.
-              
+              I'm a developer and music producer from Louisiana. I like building things, making music, and learning through hands-on work.
             </Typography>
-            
 
             <Box
               sx={{
@@ -114,28 +111,28 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <CodeIcon sx={{ color: "#6a0dad", mr: 1 }} />
-                  <Typography>Crafting experiences with elegant code.</Typography>
+                  <Typography>Writing clean, functional code.</Typography>
                 </Box>
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <MusicNoteIcon sx={{ color: "#d9534f", mr: 1 }} />
-                  <Typography>Producing music that hits in all the right places.</Typography>
+                  <Typography>Producing and recording original music.</Typography>
                 </Box>
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <SearchIcon sx={{ color: "gold", mr: 1 }} />
-                  <Typography>Always exploring new ideas and ways to grow.</Typography>
+                  <Typography>Trying out new tools and ideas.</Typography>
                 </Box>
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <ConnectWithoutContactIcon sx={{ color: "green", mr: 1 }} />
-                  <Typography>Down to collaborate or just talk shop.</Typography>
+                  <Typography>Open to working together or talking tech.</Typography>
                 </Box>
               </motion.div>
             </Box>
