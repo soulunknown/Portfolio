@@ -23,23 +23,10 @@ export default function Hero() {
         mt: 10,
         px: 2,
         position: "relative",
-        zIndex: 1,
+        zIndex: 10,
+        isolation: "isolate",
       }}
     >
-      {/* Ambient background light effect */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: -60,
-          left: -60,
-          width: 300,
-          height: 300,
-          background: "radial-gradient(circle, rgba(106,13,173,0.3), transparent 70%)",
-          filter: "blur(60px)",
-          zIndex: 0,
-        }}
-      />
-
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -53,12 +40,12 @@ export default function Hero() {
             borderRadius: 6,
             background:
               theme.palette.mode === "dark"
-                ? "rgba(255, 255, 255, 0.05)"
-                : "rgba(255, 255, 255, 0.75)",
-            backdropFilter: "blur(12px)",
+                ? "rgba(0, 0, 0, 0.5)"
+                : "rgba(255, 255, 255, 0.85)",
+            backdropFilter: "blur(20px)",
             boxShadow: theme.palette.mode === "dark"
-              ? "0px 15px 35px rgba(255,255,255,0.05)"
-              : "0px 15px 35px rgba(0,0,0,0.1)",
+              ? "0px 20px 40px rgba(255,255,255,0.05)"
+              : "0px 20px 40px rgba(0,0,0,0.1)",
           }}
         >
           <CardContent>
@@ -90,7 +77,7 @@ export default function Hero() {
                 mb: 4,
                 maxWidth: 640,
                 margin: "0 auto",
-                lineHeight: 1.0,
+                lineHeight: 1.4,
               }}
             >
               I'm a developer and music producer from Louisiana. I like building things, making music, and learning through hands-on work.

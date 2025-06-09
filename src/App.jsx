@@ -24,18 +24,19 @@ function InnerApp() {
         transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
       }}
     >
+      {/* 🔮 Lava Lamp Background */}
+      <div className="lava-lamp-bg">
+        <div className="blob" />
+        <div className="blob" />
+        <div className="blob" />
+      </div>
+
       <Navbar />
-      <Container
-        maxWidth="md"
-        sx={{
-          backgroundColor: "transparent",
-          color: theme.palette.text.primary,
-          padding: 4,
-          transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-        }}
-      >
+
+      <Container maxWidth="md" sx={{ padding: 4 }}>
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/music" element={<Music />} />
