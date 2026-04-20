@@ -29,6 +29,7 @@ const musicSections = [
 export default function Music() {
   return (
     <Container maxWidth="lg" sx={{ mt: 5 }}>
+      {/* 🔹 Experience Section */}
       <Grid container spacing={4}>
         {musicSections.map((section, index) => (
           <Grid item xs={12} key={index}>
@@ -52,10 +53,20 @@ export default function Music() {
                         {exp.role}
                       </Typography>
                       <Typography variant="body2">{exp.company}</Typography>
-                      <Typography variant="body2" fontStyle="italic">{exp.dates}</Typography>
+                      <Typography variant="body2" fontStyle="italic">
+                        {exp.dates}
+                      </Typography>
                       {exp.details && <Typography variant="body2">{exp.details}</Typography>}
-                      {exp.notable && <Typography variant="body2"><strong>Track:</strong> {exp.notable}</Typography>}
-                      {exp.skills && <Typography variant="body2"><strong>Skills:</strong> {exp.skills}</Typography>}
+                      {exp.notable && (
+                        <Typography variant="body2">
+                          <strong>Track:</strong> {exp.notable}
+                        </Typography>
+                      )}
+                      {exp.skills && (
+                        <Typography variant="body2">
+                          <strong>Skills:</strong> {exp.skills}
+                        </Typography>
+                      )}
                     </Box>
                   ))}
                 </CardContent>
@@ -65,21 +76,41 @@ export default function Music() {
         ))}
       </Grid>
 
+      {/* 🔥 Spotify Section */}
       <Box mt={5}>
+        <Typography variant="h5" textAlign="center" mb={3}>
+          Listen
+        </Typography>
+
         <Grid container spacing={3} justifyContent="center">
           {[
-            "https://open.spotify.com/embed/artist/0NfkWfj6ZOV05fwGodsQnU?utm_source=generator&theme=0",
-            "https://open.spotify.com/embed/artist/1bystgPo0YQMMSFgrr3ZNM?utm_source=generator",
-          ].map((src, i) => (
-            <Grid key={i} item xs={12} sm={6} display="flex" justifyContent="center">
+            {
+              name: "Soul Unknown",
+              src: "https://open.spotify.com/embed/artist/0NfkWfj6ZOV05fwGodsQnU?utm_source=generator&theme=0",
+            },
+            {
+              name: "Alt Project",
+              src: "https://open.spotify.com/embed/artist/1bystgPo0YQMMSFgrr3ZNM?utm_source=generator",
+            },
+            {
+              name: "New Artist",
+              src: "https://open.spotify.com/embed/artist/7tXOatuiHLq2hWPG70mcV7?utm_source=generator",
+            },
+          ].map((artist, i) => (
+            <Grid key={i} item xs={12} sm={6} md={4} display="flex" justifyContent="center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                style={{ width: "100%", maxWidth: 400 }}
               >
+                <Typography textAlign="center" mb={1}>
+                  {artist.name}
+                </Typography>
+
                 <iframe
-                  style={{ borderRadius: 12, width: "100%", maxWidth: 600 }}
-                  src={src}
+                  style={{ borderRadius: 12, width: "100%" }}
+                  src={artist.src}
                   height="352"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
