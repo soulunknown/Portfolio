@@ -20,6 +20,7 @@ import {
   Menu as MenuIcon,
   DarkMode,
   LightMode,
+  Coffee as CoffeeIcon,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { ColorModeContext } from "../ThemeProvider";
@@ -79,7 +80,7 @@ export default function Navbar() {
       width: "0%",
       left: "50%",
       bottom: 0,
-      borderBottom: "2px solidrgb(192, 37, 249)",
+      borderBottom: "2px solid rgb(192, 37, 249)", // ✅ fixed bug
       transition: "all 0.3s ease",
       transform: "translateX(-50%)",
     },
@@ -116,6 +117,7 @@ export default function Navbar() {
             px: 2,
           }}
         >
+          {/* Avatar */}
           <Link to="/" style={{ textDecoration: "none" }}>
             <Avatar
               src="/henlew2.webp"
@@ -135,6 +137,7 @@ export default function Navbar() {
             />
           </Link>
 
+          {/* Desktop Nav */}
           {!isMobile && (
             <Box display="flex" alignItems="center" gap={4}>
               {navItems.map((item) => (
@@ -150,6 +153,7 @@ export default function Navbar() {
             </Box>
           )}
 
+          {/* Right Side Icons */}
           <Box display="flex" alignItems="center" gap={2}>
             {!isMobile && (
               <>
@@ -161,6 +165,7 @@ export default function Navbar() {
                 >
                   <GitHub />
                 </IconButton>
+
                 <IconButton
                   color="inherit"
                   href="https://www.linkedin.com/in/henryrlewis/"
@@ -169,8 +174,28 @@ export default function Navbar() {
                 >
                   <LinkedIn />
                 </IconButton>
+
+                {/* ☕ Buy Me a Coffee */}
+                <IconButton
+                  color="inherit"
+                  href="https://buymeacoffee.com/henryrosslewis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    ...iconStyle,
+                    color: "#ffdd57",
+                    "&:hover": {
+                      transform: "scale(1.15)",
+                      boxShadow: "0 0 16px rgba(255, 221, 87, 0.6)",
+                    },
+                  }}
+                >
+                  <CoffeeIcon />
+                </IconButton>
               </>
             )}
+
+            {/* Theme Toggle */}
             <IconButton
               color="inherit"
               onClick={toggleColorMode}
@@ -184,6 +209,8 @@ export default function Navbar() {
             >
               {theme.palette.mode === "dark" ? <LightMode /> : <DarkMode />}
             </IconButton>
+
+            {/* Mobile Menu */}
             {isMobile && (
               <IconButton color="inherit" onClick={handleDrawerToggle}>
                 <MenuIcon />
@@ -193,6 +220,7 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
 
+      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
@@ -222,6 +250,7 @@ export default function Navbar() {
               },
             }}
           />
+
           <List>
             {navItems.map((item) => (
               <ListItem key={item.label} disablePadding>
@@ -244,6 +273,8 @@ export default function Navbar() {
               </ListItem>
             ))}
           </List>
+
+          {/* Mobile Icons */}
           <Box display="flex" justifyContent="center" gap={2} mt={2}>
             <IconButton
               color="inherit"
@@ -253,6 +284,7 @@ export default function Navbar() {
             >
               <GitHub />
             </IconButton>
+
             <IconButton
               color="inherit"
               href="https://www.linkedin.com/in/henryrlewis/"
@@ -260,6 +292,20 @@ export default function Navbar() {
               sx={iconStyle}
             >
               <LinkedIn />
+            </IconButton>
+
+            {/* ☕ Buy Me a Coffee (mobile) */}
+            <IconButton
+              color="inherit"
+              href="https://buymeacoffee.com/henryrosslewis"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                ...iconStyle,
+                color: "#ffdd57",
+              }}
+            >
+              <CoffeeIcon />
             </IconButton>
           </Box>
         </Box>
