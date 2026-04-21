@@ -11,6 +11,7 @@ import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import SearchIcon from "@mui/icons-material/Search";
 import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ added
 
 export default function Hero() {
   const theme = useTheme();
@@ -43,18 +44,21 @@ export default function Hero() {
                 ? "rgba(0, 0, 0, 0.5)"
                 : "rgba(255, 255, 255, 0.85)",
             backdropFilter: "blur(20px)",
-            boxShadow: theme.palette.mode === "dark"
-              ? "0px 20px 40px rgba(255,255,255,0.05)"
-              : "0px 20px 40px rgba(0,0,0,0.1)",
+            boxShadow:
+              theme.palette.mode === "dark"
+                ? "0px 20px 40px rgba(255,255,255,0.05)"
+                : "0px 20px 40px rgba(0,0,0,0.1)",
           }}
         >
           <CardContent>
+            {/* Title */}
             <Typography
               variant="h2"
               sx={{
                 fontWeight: 700,
                 fontSize: { xs: "2.2rem", sm: "3rem", md: "3.5rem" },
-                background: "linear-gradient(90deg,rgb(72, 108, 192),rgb(235, 43, 43))",
+                background:
+                  "linear-gradient(90deg,rgb(72, 108, 192),rgb(235, 43, 43))",
                 backgroundSize: "200% auto",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -70,6 +74,7 @@ export default function Hero() {
               Henry Lewis
             </Typography>
 
+            {/* Subtitle */}
             <Typography
               variant="subtitle1"
               sx={{
@@ -80,9 +85,11 @@ export default function Hero() {
                 lineHeight: 1.4,
               }}
             >
-              I'm a developer and music producer from Louisiana. I like building things, making music, and learning through hands-on work.
+              I'm a developer and music producer from Louisiana. I like building
+              things, making music, and learning through hands-on work.
             </Typography>
 
+            {/* Bullet Points */}
             <Box
               sx={{
                 textAlign: "left",
@@ -105,7 +112,9 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <MusicNoteIcon sx={{ color: "#d9534f", mr: 1 }} />
-                  <Typography>Producing and recording original music.</Typography>
+                  <Typography>
+                    Producing and recording original music.
+                  </Typography>
                 </Box>
               </motion.div>
 
@@ -119,16 +128,20 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.03 }} style={{ width: "100%" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <ConnectWithoutContactIcon sx={{ color: "green", mr: 1 }} />
-                  <Typography>Open to working together or talking tech.</Typography>
+                  <Typography>
+                    Open to working together or talking tech.
+                  </Typography>
                 </Box>
               </motion.div>
             </Box>
 
+            {/* ✅ Fixed Button */}
             <Button
               variant="contained"
               color="primary"
               size="large"
-              href="#contact"
+              component={Link}
+              to="/contact"
               sx={{
                 px: 5,
                 borderRadius: "50px",
