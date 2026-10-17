@@ -7,7 +7,7 @@ const projects = [
     title: "Car Wizard",
     description: "A car review app where users can browse, compare, and review cars with specs, ratings, and image uploads.",
     image: "/carwizard.webp",
-    link: "https://carreviewweb.onrender.com/",
+    link: "https://github.com/soulunknown/CarReview",
     techStack: ["React", "Express", "PostgreSQL", "AWS S3"],
   },
   {

@@ -1,6 +1,8 @@
+
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Container, Box, useTheme } from "@mui/material";
+
 import Navbar from "./components/Navbar.jsx";
 import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -11,6 +13,7 @@ import Experience from "./pages/Experience.jsx";
 import Education from "./pages/Education.jsx";
 import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
+import Gallery from "./pages/Gallery.jsx";
 
 function InnerApp() {
   const theme = useTheme();
@@ -23,7 +26,8 @@ function InnerApp() {
     if (existingScript) return;
 
     const script = document.createElement("script");
-    script.src = "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
+    script.src =
+      "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
     script.async = true;
 
     script.setAttribute("data-name", "BMC-Widget");
@@ -44,15 +48,19 @@ function InnerApp() {
       );
 
       if (widgetScript) {
-        document.body.removeChild(widgetScript);
+        widgetScript.remove();
       }
 
       const bmcFrame = document.getElementById("bmc-wbtn");
+
       if (bmcFrame) {
         bmcFrame.remove();
       }
 
-      const bmcContainer = document.getElementById("bmc-wbtn-wrapper");
+      const bmcContainer = document.getElementById(
+        "bmc-wbtn-wrapper"
+      );
+
       if (bmcContainer) {
         bmcContainer.remove();
       }
@@ -66,30 +74,59 @@ function InnerApp() {
         width: "100%",
         backgroundColor: theme.palette.background.default,
         color: theme.palette.text.primary,
-        transition: "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+        transition:
+          "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
         display: "flex",
         flexDirection: "column",
         position: "relative",
       }}
     >
+      {/* Animated Lava Lamp Background */}
       <div className="lava-lamp-bg">
         <div className="blob" />
         <div className="blob" />
         <div className="blob" />
       </div>
 
+      {/* Navigation */}
       <Navbar />
 
-      <Container maxWidth="md" sx={{ padding: 4 }}>
+      {/* Main Content */}
+      <Container
+        maxWidth="md"
+        sx={{
+          padding: 4,
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Hero />} />
+
           <Route path="/music" element={<Music />} />
+
           <Route path="/projects" element={<Projects />} />
+
+          <Route path="/gallery" element={<Gallery />} />
+
           <Route path="/contact" element={<Contact />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
+
+          <Route
+            path="/experience"
+            element={<Experience />}
+          />
+
+          <Route
+            path="/education"
+            element={<Education />}
+          />
+
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
+
+          <Route
+            path="/blog/:id"
+            element={<BlogPost />}
+          />
         </Routes>
       </Container>
     </Box>
