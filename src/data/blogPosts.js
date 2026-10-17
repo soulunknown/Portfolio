@@ -1,10 +1,47 @@
-export const blogPosts = [
 
+export const blogPosts = [
+  {
+    id: "living-with-bipolar-one-disorder",
+    title: "Living With Bipolar I Disorder",
+    date: "2026-10-17",
+    summary:
+      "A personal reflection on my Bipolar I diagnosis, hospitalization, recovery, and learning to navigate life with mental illness.",
+    content: `
+      <p>Life doesn't always go the way you expect it to. Sometimes things happen that completely change how you see yourself, your future, and the world around you.</p>
+
+      <p>Earlier this year, I was diagnosed with Bipolar I disorder. It's something I'm still learning to understand and live with.</p>
+
+      <p>In February, I experienced a severe manic episode that resulted in hospitalization. It was a turning point in my life. One moment I thought I had everything figured out, and the next I was facing a reality I never imagined for myself.</p>
+
+      <p>Living with bipolar disorder isn't simply about being happy one minute and sad the next. It's much more complicated than that. It can affect your thoughts, energy, judgment, relationships, and ability to function in everyday life.</p>
+
+      <p>Since my diagnosis, I've had to make adjustments. I take medication, attend counseling, and work on understanding my mental health. Some days are easier than others. There are days when I feel motivated and optimistic about the future, and others when even the simplest things feel difficult.</p>
+
+      <p>One of the hardest parts has been accepting that my life might look different from what I originally planned. I've always enjoyed creating things, whether that's writing code, producing music, or exploring new ideas. Those interests haven't disappeared. I'm still the same person, just dealing with something I didn't fully understand before.</p>
+
+      <p>I've also learned that mental illness doesn't always look the way people expect it to. Someone can appear completely fine on the outside while struggling with things nobody else can see.</p>
+
+      <p>I'm writing this because I don't want to feel like I have to hide my diagnosis. Bipolar disorder is part of my life, but it isn't my entire identity.</p>
+
+      <p>I'm 29 years old, and I still have plenty of life ahead of me. I don't have everything figured out, and I'm not going to pretend that I do.</p>
+
+      <p>Right now, I'm taking things one day at a time, trying to stay healthy, and figuring out what comes next.</p>
+
+      <p>If there's one thing I've learned, it's that life can change unexpectedly. Sometimes you have to rebuild your understanding of yourself along the way.</p>
+
+      <p>And that's where I am right now.</p>
+
+      <p>Still learning. Still creating. Still here.</p>
+
+      <p><strong>Henry Lewis</strong></p>
+    `
+  },
   {
     id: "doing-too-much-at-once",
     title: "What I Learned From Doing Too Much at Once",
     date: "2025-03-23",
-    summary: "A low-pressure reflection on starting too many things and slowly figuring it out.",
+    summary:
+      "A low-pressure reflection on starting too many things and slowly figuring it out.",
     content: `
       <p>I start a lot of things.</p>
 
