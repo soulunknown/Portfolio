@@ -28,7 +28,7 @@ const galleryItems = [
     id: 2,
     title: "Sketchbook",
     category: "Sketches",
-    image: "/gallery/sketch1.webp",
+    image: "wave.jpg",
     description: "A collection of hand drawn ideas.",
   },
   {
