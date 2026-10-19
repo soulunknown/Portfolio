@@ -21,7 +21,7 @@ const galleryItems = [
     id: 1,
     title: "Abstract Artwork",
     category: "Artwork",
-    image: "/gallery/artwork1.webp",
+    image: "lovegrow.jpeg",
     description: "An exploration of abstract shapes and colors.",
   },
   {
