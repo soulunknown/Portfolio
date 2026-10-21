@@ -68,6 +68,7 @@ export default function Navbar() {
     { label: "Education", path: "/education" },
     { label: "Music", path: "/music" },
     { label: "Projects", path: "/projects" },
+    { label: "Animation", path: "/psychedelic" },
     { label: "Gallery", path: "/gallery" },
     { label: "Blog", path: "/blog" },
     { label: "Contact", path: "/contact" },

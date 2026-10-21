@@ -14,6 +14,7 @@ import Education from "./pages/Education.jsx";
 import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
 import Gallery from "./pages/Gallery.jsx";
+import Psychedelic from "./pages/Psychedelic.jsx";
 
 function InnerApp() {
   const theme = useTheme();
@@ -110,6 +111,7 @@ function InnerApp() {
           <Route path="/gallery" element={<Gallery />} />
 
           <Route path="/contact" element={<Contact />} />
+          <Route path="/psychedelic" element={<Psychedelic />} />
 
           <Route
             path="/experience"
