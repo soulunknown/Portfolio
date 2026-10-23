@@ -1,6 +1,26 @@
 
 export const blogPosts = [
   {
+    id: "making-pot-roast-for-my-family",
+    title: "Making Pot Roast for My Family",
+    date: "2026-10-23",
+    summary:
+      "Making a homemade pot roast for my family with a Dutch oven, a good recipe, and a little patience.",
+    content: `
+      <p>I’m making pot roast for my family using the Dutch Oven Pot Roast recipe from Cooking for My Soul. Beef, potatoes, carrots, and a little patience. Sounds like a pretty good dinner to me.</p>
+
+      <p>The recipe starts with searing the beef and browning the onions before adding the broth and herbs. Then it goes into the oven to cook slowly, with the potatoes and carrots going in later. It’s the kind of meal you have to give some time.</p>
+
+      <p>There’s something nice about having dinner be the thing I’m working on. Get the ingredients together, follow the steps, and make something to share with the people around me.</p>
+
+      <p>I’m not trying to become a professional chef. Just trying to feed my family a good meal.</p>
+
+      <p>If you want to make it too, here’s <a href="https://cookingformysoul.com/dutch-oven-pot-roast/" target="_blank" rel="noopener noreferrer">the full recipe by Tania at Cooking for My Soul</a>.</p>
+
+      <p><strong>Henry Lewis</strong></p>
+    `
+  },
+  {
     id: "living-with-bipolar-one-disorder",
     title: "Living With Bipolar I Disorder",
     date: "2026-10-17",
