@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 const galleryItems = [
   {
     id: 1,
-    title: "Abstract Artwork",
+    title: "Lovegrow",
     category: "Artwork",
     image: "lovegrow.jpeg",
     description: "An exploration of abstract shapes and colors.",
@@ -33,10 +33,17 @@ const galleryItems = [
   },
   {
     id: 3,
-    title: "Photography",
+    title: "Costa Rica",
     category: "Photography",
     image: "/costa rica.jpeg",
     description: "Capturing moments through photography.",
+  },
+    {
+    id: 4,
+    title: "Sit For a While",
+    category: "Photography",
+    image: "SIT FOR A WHILE.jpeg",
+    description: "A new addition to my creative collection.",
   },
 ];
 
